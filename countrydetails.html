@@ -8,20 +8,18 @@
 </head>  
 <body>
         <script>
-        // Create a new XMLHttpRequest object
+        
          let xhr = new XMLHttpRequest();
 
-         // Configure it: GET-request for the URL
+    
          xhr.open('GET', 'https://restcountries.com/v3.1/all', true);
 
-        // Set up the onload event handler to process the response
+       
         xhr.onload = function () {
          if (xhr.status >= 200 && xhr.status < 300) {
-        // Parse the JSON response
-        let countries = JSON.parse(xhr.responseText);
-
-        // Iterate through the countries and log the required information
-        countries.forEach(country => {
+        
+        let countries = JSON.parse(xhr.responseText);        
+       countries.forEach(country => {
             let name = country.name.common;
             let region = country.region;
             let subRegion = country.subregion;
@@ -37,7 +35,7 @@
         console.error('Failed to fetch countries: ', xhr.statusText);
     }
 };
-        // Send the request
+       
          xhr.send();
 
         </script>
